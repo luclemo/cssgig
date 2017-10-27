@@ -1,0 +1,160 @@
+// --------------------------------
+// Colours
+// --------------------------------
+$kav-red: #d84445;
+$kav-darkBlue: #084259;
+$kav-midBlue: #027ca9;
+$kav-lightBlue: #78c1d7;
+
+// --------------------------------
+// Styles
+// --------------------------------
+.poster {
+  background: white;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr 1fr;
+  @include breakpoint(minphablet) {
+    grid-template-rows: 40vh 40vh auto;
+  }
+  @include breakpoint(minlaptop) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+.header {
+  color: white;
+  display: grid;
+  grid-template-columns: 68% auto;
+  @include breakpoint(minphablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include breakpoint(minlaptop) {
+    grid-column: 1;
+    grid-row: 1 / span all;
+    background: #000;
+  }
+  & > * {
+    padding: $spacer;
+    @include breakpoint(minlaptop) {
+      grid-column: 1 / 3;
+    }
+  }
+  &__title {
+    background: $black;
+    @include big();
+  }
+  &__number {
+    background: $kav-red;
+    @include big();
+    display: block;
+    text-align: right;
+    @include breakpoint(minlaptop) {
+      text-align: left;
+    }
+  }
+}
+
+.album {
+  grid-column: 1;
+  align-self: flex-end;
+  grid-row: 2 / span all;
+  padding: $spacer;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: $spacer;
+  @include breakpoint(minlaptop) {
+    grid-column: 2;
+    grid-row: 1 / span all;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  &__title {
+    @include medium();
+    margin-bottom: $spacer;
+    @include breakpoint(phablet) {
+      grid-column: 1 / span all;
+    }
+    @include breakpoint(minlaptop) {
+      text-align: right;
+      margin-bottom: 2em;
+    }
+  }
+  &__year {
+    display: block;
+    color: $kav-midBlue;
+  }
+  &__track-list {
+    grid-column: 1 / span 3;
+    @include breakpoint(minphablet) {
+      grid-column: 2 / span 2;
+      -webkit-columns: 2;
+      -moz-columns: 2;
+      columns: 2;
+      -webkit-column-gap: 3em;
+      -moz-column-gap: 3em;
+      column-gap: 3em;
+    }
+    @include breakpoint(minlaptop) {
+      columns: initial;
+    }
+  }
+  &__track-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 0.1em 0;
+    font-weight: bold;
+  }
+  &__track-title {
+    @include small();
+  }
+  &__track-length {
+    color: $kav-midBlue;
+    @include small();
+    @include breakpoint(minlaptop) {
+      margin-left: 2em;
+    }
+  }
+}
+
+.triangles {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: stretch;
+  @include breakpoint(minlaptop) {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    max-width: 100%;
+  }
+  &--small {
+    @include breakpoint(minphablet) {
+      display: none;
+    }
+  }
+  &--large {
+    display: none;
+    @include breakpoint(minphablet) {
+      display: initial;
+    }
+    @include breakpoint(minlaptop) {
+      display: none;
+    }
+  }
+  &--jumbo {
+    grid-row: 1 / span all;
+    @include breakpoint(laptop) {
+      display: none;
+    }
+  }
+}
+
+.triangle-right {
+  fill: $kav-lightBlue;
+}
+
+.triangle-left {
+  fill: $kav-darkBlue;
+}

@@ -1,0 +1,83 @@
+// ----------------------------------------------------------------
+// Variables
+// ----------------------------------------------------------------
+
+// Colors
+$grey: #cdcdcd;
+$black: #212121;
+
+// Typography
+$body-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Layout
+$spacer: 1rem;
+
+// ----------------------------------------------------------------
+// Mixins
+// ----------------------------------------------------------------
+
+// Typography
+@mixin big() {
+  font-size: 2.125em;
+  line-height: 1.1;
+  font-weight: bold;
+  @include breakpoint(phablet) {
+    font-size: 1.65em;
+  }
+}
+
+@mixin medium() {
+  font-size: 1.75em;
+  line-height: 1.1;
+  font-weight: bold;
+  @include breakpoint(phablet) {
+    font-size: 1.5em;
+  }
+}
+
+@mixin small() {
+  font-size: 0.875em;
+}
+
+// ----------------------------------------------------------------
+// Syles
+// ----------------------------------------------------------------
+
+// Site-wide ----------------------
+html {
+  height: 100%;
+  @include breakpoint(mindesktop) {
+    font-size: 131.25%;
+  }
+}
+
+body {
+  color: $black;
+  font-family: $body-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// reset
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+// All Gigs ----------------------
+.gig {
+  line-height: 1.4;
+  background: $grey;
+  padding: $spacer;
+  min-height: 100%;
+  display: grid;
+}
