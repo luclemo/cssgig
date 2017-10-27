@@ -5,6 +5,8 @@
 // Colors
 $grey: #cdcdcd;
 $black: #212121;
+$hot: #e91e63;
+$warm: #7c4881;
 
 // Typography
 $body-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -71,6 +73,43 @@ ol {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+// home page
+.home {
+  color: $warm;
+  font-size: 1.1875rem;
+  a {
+    text-decoration: none;
+    color: $hot;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .site-title {
+    text-align: center;
+    margin: 2em 0;
+    font-size: 2em;
+  }
+
+  .poster-list {
+    text-align: center;
+    li {
+      margin: 1em 0;
+      font-weight: bold;
+    }
+  }
+
+  .poster-link {
+    opacity: 0.8;
+    display: block;
+    &:hover {
+      opacity: 1;
+      transform: scale(2);
+    }
+  }
+  .poster-link--inactive {
+    opacity: 0.5;
+  }
 }
 
 // All Gigs ----------------------
