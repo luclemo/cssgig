@@ -9,6 +9,7 @@ $kav-lightBlue: #78c1d7;
 // --------------------------------
 // Styles
 // --------------------------------
+// Main grid ----------------------
 .poster {
   background: white;
   min-height: 100%;
@@ -25,6 +26,7 @@ $kav-lightBlue: #78c1d7;
   }
 }
 
+// Poster title and number
 .header {
   color: white;
   display: grid;
@@ -66,6 +68,7 @@ $kav-lightBlue: #78c1d7;
   }
 }
 
+// Album content --------------------
 .album {
   grid-column: 1;
   align-self: flex-end;
@@ -81,6 +84,8 @@ $kav-lightBlue: #78c1d7;
     align-items: flex-end;
     flex-direction: column;
   }
+
+  // album title
   &__title {
     @include medium();
     margin-bottom: 1em;
@@ -89,10 +94,14 @@ $kav-lightBlue: #78c1d7;
       margin-bottom: 2em;
     }
   }
+
+  // release year
   &__year {
     display: block;
     color: $kav-midBlue;
   }
+
+  // track list
   &__track-list {
     grid-column: 1 / span 3;
     @include breakpoint(minphablet) {
@@ -127,9 +136,7 @@ $kav-lightBlue: #78c1d7;
   }
 }
 
-// --------------------------------
-// Triangles
-// --------------------------------
+// Triangles --------------------------------
 .triangles {
   grid-column: 1;
   grid-row: 2;
