@@ -120,6 +120,9 @@ $kav-lightBlue: #78c1d7;
   }
 }
 
+// --------------------------------
+// Triangles
+// --------------------------------
 .triangles {
   grid-column: 1;
   grid-row: 2;
@@ -129,12 +132,16 @@ $kav-lightBlue: #78c1d7;
     grid-row: 1;
     max-width: 100%;
   }
-  &--small {
+
+  // triangles for small screens
+  [class$="--small"] {
     @include breakpoint(minphablet) {
       display: none;
     }
   }
-  &--large {
+
+  // triangles for medium screens
+  [class$="--medium"] {
     display: none;
     @include breakpoint(minphablet) {
       display: initial;
@@ -143,7 +150,9 @@ $kav-lightBlue: #78c1d7;
       display: none;
     }
   }
-  &--jumbo {
+
+  // triangles for jumbo screens
+  [class$="--jumbo"] {
     grid-row: 1 / span all;
     @include breakpoint(laptop) {
       display: none;
